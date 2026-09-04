@@ -1,15 +1,16 @@
-RDN Intake & Referral Agent - Live Test Results
+# RDN Intake & Referral Agent - Live Test Results
 
-TEST STATUS
+## TEST STATUS
 
-Status: Successful
-Environment: Demo
+Status: Successful  
+Environment: Demo  
 CALL-E Workflow: rdn-intake-referral
 
+## LIVE CALL VALIDATION
 
-LIVE CALL VALIDATION
+The RDN Intake & Referral Agent successfully completed a live outbound phone conversation using CALL-E.
 
-The RDN Intake & Referral Agent successfully completed a live phone conversation using CALL-E.
+The call was initiated by the RDN/care team workflow, with the CALL-E AI phone agent contacting the patient to conduct the initial intake.
 
 The test demonstrated:
 
@@ -28,8 +29,9 @@ The test demonstrated:
 - Patient confirmation
 - Structured JSON result generation
 
+The collected information is intended for subsequent review by the RDN or care team. The AI does not confirm the appointment.
 
-SAFETY VALIDATION
+## SAFETY VALIDATION
 
 The agent was instructed not to:
 
@@ -40,8 +42,7 @@ The agent was instructed not to:
 
 During the live test, the agent maintained the intended intake boundary when the recipient introduced an unrelated nutrition question.
 
-
-STRUCTURED RESULT
+## STRUCTURED RESULT
 
 A successful test produced the following sanitized example:
 
@@ -61,8 +62,7 @@ A successful test produced the following sanitized example:
   "patient_confirmed_information": "yes"
 }
 
-
-RESULT METRICS
+## RESULT METRICS
 
 - Status: Completed
 - Task completed: True
@@ -70,8 +70,7 @@ RESULT METRICS
 - Patient confirmed information: Yes
 - Failure code: Null
 
-
-PRIVACY
+## PRIVACY
 
 The public repository must not contain:
 
@@ -83,11 +82,12 @@ The public repository must not contain:
 
 The complete live-call output is retained separately as private test evidence.
 
-
-CONCLUSION
+## CONCLUSION
 
 The live test validated the core workflow:
 
-Patient -> AI Phone Intake -> Consent -> Structured Information Collection -> Confirmation -> RDN Referral-Ready Output
+RDN/Care Team -> CALL-E AI Phone Agent -> Patient Consent -> Structured Intake -> Patient Confirmation -> RDN-Ready Output -> Human/RDN Follow-up
 
-The prototype demonstrates that CALL-E can be used to implement a consent-based AI phone intake workflow that prepares structured information for subsequent human RDN follow-up.
+The prototype demonstrates that CALL-E can be used to implement a consent-based AI phone intake workflow that converts a patient conversation into structured, patient-confirmed information for subsequent human RDN review and follow-up.
+
+The current prototype collects the patient's preferred appointment time but does not confirm or schedule the appointment. A future production implementation could integrate the structured output with an RDN scheduling or care-management system.
